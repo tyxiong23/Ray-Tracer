@@ -1,0 +1,243 @@
+Camera {
+    from 50 52 295.6
+    at 50 47.739 195.6
+    up 0 1 0
+    angle 30
+    width 1600
+    height 1200
+    aperture 0
+    focus_dist 200
+    time0 0.0
+    time1 0.0
+}
+
+Background {
+    color 1 1 1
+}
+
+Materials {
+    numMaterials 16
+    Diffuse { 
+	  Texture {
+          Constant {
+              color 0.75 0.25 0.25
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Constant {
+              color 0.25 0.25 0.75
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Constant {
+              color 0.75 0.75 0.75
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Constant {
+              color 0.6 0.8 0.95
+          }
+      }
+	}
+    Specular { 
+	  Texture {
+          Constant {
+              color 0.999 0.999 0.999
+          }
+      }
+      fuzz 0
+	}
+    DiffuseLight { 
+	  Texture {
+          Constant {
+              color 6 6 6
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Image {
+              src texture/scene_mount.jpg
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Image {
+              src texture/star.jpeg
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Image {
+              src texture/horse.jpg
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Image {
+              src texture/bridge.jpg
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Image {
+              src texture/vase.png
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Checker {
+              color1 0.5 0.1 0.4
+              color2 0.75 0.75 0.75
+              scale 300000
+          }
+      }
+	}
+    Refract {
+        ref 1.5
+        color 0.85 0.65 0.95
+    }
+    Diffuse { 
+	  Texture {
+          Image {
+              src texture/color.png
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Image {
+              src texture/bronze.jpeg
+            }
+	    }
+    }
+    Refract {
+        ref 1.6
+        color 1 1 1
+    }
+}
+
+Group {
+    numObjects 18
+    MaterialIndex 0
+    Sphere {
+		center  -99999 40.8 81.6
+		radius  100000
+    }
+    MaterialIndex 1
+    Sphere {
+        center  100099 40.8 81.6
+		radius  100000
+    }
+    MaterialIndex 2
+    Sphere {
+		center  50 40.8 -100000
+		radius  100000
+    }
+    MaterialIndex 2
+    Sphere {
+		center  50 -100000 81.6
+		radius  100000
+    }
+    MaterialIndex 2
+    Sphere {
+		center  50 100081.6 81.6
+		radius  100000
+    }
+
+    MaterialIndex 3
+    TriangleMesh {
+        obj_file objects/Arma.obj
+        center  72 15 80
+		scale 18 18 18
+        rotateY 145
+    }
+    MaterialIndex 5
+    Rectangle {
+		vertex0 20 81.595 35
+        vertex1 20 81.595 140
+        vertex2 80 81.595 140
+    }
+    MaterialIndex 7
+    Rectangle {
+		vertex0 0 81 0.5
+        vertex1 0 0 0.5
+        vertex2 99 0 0.5
+    }
+    MaterialIndex 8
+    Rectangle {
+		vertex0 1.005 50 80
+        vertex1 1.005 27 80
+        vertex2 1.005 27 30
+    }
+    MaterialIndex 9
+    Rectangle {
+		vertex0 1.005 50 145
+        vertex1 1.005 27 145
+        vertex2 1.005 27 95
+    }
+    MaterialIndex 1
+    TriangleMesh {
+        obj_file objects/cube.obj
+        center  80 40 50
+		scale 20 2.5 20
+        rotateY 0
+    }
+    MaterialIndex 10
+    RevSurface {
+        center 89 52 60
+        scale 2 4 2
+        profile BezierCurve {
+            controls
+                [ -1 2 0 ]
+                [ 0 0 0 ]
+                [ -4 -1 0 ]
+                [ -2 -2 0 ]
+        }
+    }
+    MaterialIndex 2
+    TriangleMesh {
+        obj_file objects/cube.obj
+        center  85 28 100
+		scale 15 2.5 30
+        rotateY 0
+    }
+    MaterialIndex 12
+    TriangleMesh {
+        obj_file objects/fixed.perfect.dragon.obj
+        center  92 35 115
+        scale 10 10 10
+        rotateY 60
+    }
+    MaterialIndex 13
+    Sphere {
+		center  57 8 110
+		radius  8
+    }
+    MaterialIndex 15
+    Sphere {
+		center  42 12 81
+		radius  12
+    }
+    MaterialIndex 6
+    Sphere {
+		center  27 8 110
+		radius  8
+    }
+    MaterialIndex 14
+    Sphere {
+		center  27 16.5 47
+		radius  16.5
+    }
+}

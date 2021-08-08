@@ -1,0 +1,137 @@
+Camera {
+    from 50 52 295.6
+    at 50 47.739 195.6
+    up 0 1 0
+    angle 30
+    width 720
+    height 480
+    aperture 0
+    focus_dist 20
+    time0 0.0
+    time1 0.0
+}
+
+
+Materials {
+    numMaterials 8
+    Diffuse { 
+	  Texture {
+          Constant {
+              color 0.75 0.75 0.25
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Constant {
+              color 0.25 0.25 0.75
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Constant {
+              color 0.75 0.75 0.75
+          }
+      }
+	}
+    Diffuse { 
+	  Texture {
+          Constant {
+              color 0 0 0
+          }
+      }
+	}
+    Specular { 
+	  Texture {
+          Constant {
+              color 0.999 0.999 0.999
+          }
+      }
+      fuzz 0
+	}
+    DiffuseLight { 
+	  Texture {
+          Constant {
+              color 12 12 12
+          }
+      }
+	}
+    Refract {
+        ref 1.5
+    }
+    DiffuseLight { 
+	  Texture {
+          Constant {
+              color 8 8 8
+          }
+      }
+	}
+}
+
+Group {
+    numObjects 9
+    MaterialIndex 0
+    Sphere {
+		center  -99999 40.8 81.6
+		radius  100000
+    }
+    MaterialIndex 1
+    Sphere {
+        center  100099 40.8 81.6
+		radius  100000
+    }
+    MaterialIndex 2
+    Sphere {
+		center  50 40.8 -100000
+		radius  100000
+    }
+    MaterialIndex 2
+    Sphere {
+		center  50 -100000 81.6
+		radius  100000
+    }
+    MaterialIndex 2
+    Sphere {
+		center  50 100081.6 81.6
+		radius  100000
+    }
+    MaterialIndex 4
+    Medium {
+        Sphere {
+            center  27 25 53
+            radius  16.5
+        }
+        dense 0.05
+        color 0 0 0
+    }
+    MaterialIndex 0
+    Medium {
+        TriangleMesh {
+            obj_file objects/bunny_200.obj
+            center  75 20 78
+            scale 100 100 100
+        }
+        dense 0.1
+        color 0.75 0.25 0.25
+    }
+    
+    MaterialIndex 5
+    Sphere {
+		center  50 681.33 81.6
+		radius  600.3
+    }
+
+    MaterialIndex 0
+    Medium {
+        TriangleMesh {
+            obj_file objects/cube.obj
+            center  40 0 105
+            scale 20 30 20
+            rotateY 30
+        }
+        dense 0.1
+        color 1 1 1
+        
+    }
+}
