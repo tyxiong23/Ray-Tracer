@@ -13,9 +13,9 @@
 
 渲染效果如下。
 
-![smallpt_car_fine](result/processing/FINAL_car.jpg)
+![](result/processing/FINAL_car.jpg)
 
-![Bezier](result/FINAL_Bezier.png)
+![](result/FINAL_Bezier.png)
 
 
 
@@ -82,7 +82,7 @@ $$
 
 判断长方体相交的算法，我使用的是课件Lec4提到的基于slab的快速长方体求交算法。使用我的电脑，采样50次渲染下方这张图片，直接计算、使用AABB包围盒、使用AABB+BVH分别需要1min 21.448s、45.172s、24.970s。可以看到，AABB包围盒和层次包围体在面对多个面片的复杂图形时提速明显。
 
-![image-20210627205457106](C:\Users\x-eri\AppData\Roaming\Typora\typora-user-images\image-20210627205457106.png)
+![image-20210627205457106](result/processing/test_speed.png)
 
 
 
