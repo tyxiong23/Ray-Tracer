@@ -65,7 +65,8 @@ $$
 \Delta v = - \frac {\partial C} {\partial t} \cdot (\frac {\partial S } {\partial u} \times df)/D
 $$
 
-其中$$D = \frac {\partial C} {\partial t} \cdot (\frac {\partial S } {\partial u} \times \frac {\partial S } {\partial v})$$
+其中![](http://latex.codecogs.com/svg.latex?D=\frac{\partial{C}}{\partial{t}})
+\cdot(\frac{\partial S }{\partial u}\times\frac{\partial S }{\partial v})$$
 
 由此可以首先用光线和包围盒求交（如果相交则获取初始的u、v、t），之后进行迭代：若使得相交的点（ray.origin + t * ray.direction) 和曲面上取出来的相交点的距离足够小，则说明光线和旋转曲面相交。这里需要注意，由于Bezier曲线的t的定义域为[0,1]，所以需要对于t的取值进行clamp，来保证其收敛。从实际效果来看，参数曲面的求交过程较为顺利。
 
