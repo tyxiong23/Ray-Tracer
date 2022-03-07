@@ -39,9 +39,9 @@
 
 相机内部的结构看似复杂，但总可以等效为一个带小孔的凸透镜成像模型。景深的产生来源于小孔的半径（aperture）并非为0，因此不在焦平面的物体经过成像系统之后对应在照片的一片区域上，因此表现出模糊。因此，只需要额外增加小孔半径（aperture）和透镜焦距（focus_dist）两个参数就可以完成。只需要找到相机与场景像素点连线与焦平面的交点，和在以aperture为半径相机为中心的圆盘随机采样的点连线，把这一方向作为新的光线方向即可（详见` Ray Camera::generate_ray(double hor, double ver)`）。效果如下图所示：
 
-<img src="C:\Users\x-eri\Desktop\programming\2020_2021\computer_graphics\Final_project\result\random_sphere.png" alt="C:\Users\x-eri\Desktop\programming\2020_2021\computer_graphics\Final_project\result\random_sphere.png" style="zoom:50%;" />
+<img src="result/random_sphere.png" alt="result/random_sphere.png" style="zoom:50%;" />
 
-运动模糊的来源是相机的快门速度无法趋近于正无穷，因此接收到的运动物体的光线实际上并非来自同一位置。因此，只需要设计time0、time1作为相机快门的打开和关闭时间，获取【time0，time1】内某一时刻运动物体的时刻（中心center=center(t)），进行求交即可。得到的图片如下：![moving_sphere](C:\Users\x-eri\Desktop\programming\2020_2021\computer_graphics\Final_project\result\moving_sphere.png)
+运动模糊的来源是相机的快门速度无法趋近于正无穷，因此接收到的运动物体的光线实际上并非来自同一位置。因此，只需要设计time0、time1作为相机快门的打开和关闭时间，获取【time0，time1】内某一时刻运动物体的时刻（中心center=center(t)），进行求交即可。得到的图片如下：![moving_sphere](result/moving_sphere.png)
 
 #### 2、抗锯齿和软阴影(main.cpp)
 
