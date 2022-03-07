@@ -13,11 +13,9 @@
 
 渲染效果如下。
 
-![](result/processing/FINAL_car.jpg)
+![FINAL_car](result/FINAL_car.jpg)
 
-![](result/FINAL_Bezier.png)
-
-
+![FINAL_bezier](result/FINAL_bezier.png)
 
 ![](result/FINAL_mixed_scene2.png)
 
@@ -26,7 +24,6 @@
 ### 二、算法选择
 
 本次实验中，只实现了Path Tracing（PT）一种光线追踪算法。在这一算法中，光线从相机内发出，经过场景中物体的不断反射折射，如果能在规定步数内到达光源，则从光源沿原路返回，依次乘以每个焦点的反射或折射率，作为这一点像素的颜色。
-
 
 
 ### 三、细节说明
@@ -88,7 +85,7 @@ $$
 
 #### 6、烟尘效果（体积光？）
 
-在Material.hpp中添加Isotropic类，代表可以各项同性散射的烟尘介质。此后定义继承Object类的ConstantMedium类，产生形状和内部的Object相同的烟雾。在这一模型中，经过均匀介质散射的概率$$p = C\cdot dL$$，其中dL为这一段内行进的距离。因此可以令$$C = \frac 1 {t_2 - t_1}$$，将概率归一化。在intersect方程中，可以随意设一个表面法向量方向，使得出射光线的方向也是随机的，由此也就得到了烟尘体积效果。
+在Material.hpp中添加Isotropic类，代表可以各项同性散射的烟尘介质。此后定义继承Object类的ConstantMedium类，产生形状和内部的Object相同的烟雾。在这一模型中，经过均匀介质散射的概率$$p = C\cdot dL$$，其中dL为这一段内行进的距离。因此可以令![](http://latex.codecogs.com/svg.latex?C = \frac 1 {t_2 - t_1})，将概率归一化。在intersect方程中，可以随意设一个表面法向量方向，使得出射光线的方向也是随机的，由此也就得到了烟尘体积效果。
 
 ![smoke](result/processing/smoke.png)
 
