@@ -63,8 +63,6 @@
 
 由此可以首先用光线和包围盒求交（如果相交则获取初始的u、v、t），之后进行迭代：若使得相交的点（ray.origin + t * ray.direction) 和曲面上取出来的相交点的距离足够小，则说明光线和旋转曲面相交。这里需要注意，由于Bezier曲线的t的定义域为[0,1]，所以需要对于t的取值进行clamp，来保证其收敛。从实际效果来看，参数曲面的求交过程较为顺利。
 
-代码详见文件中的`bool RevSurvace::newtonFunc(const Ray &r, double &t, double &theta, double &mu, Vec3 &normal, Vec3 &point)`  
-
 #### 5、包围盒与层次包围体加速(bbox.hpp, bvh.hpp)
 
 在加速方面，最简单易行的就是轴对齐包围盒（AABB），即按照复杂形状的最大的x/y/z跨度建立一个长宽高分别平行于坐标轴的长方体。如果光线不和长方体相交，则一定不和内部的复杂形状相交。
@@ -83,7 +81,7 @@
 
 ![smoke](result/processing/smoke.png)
 
-（由于渲染时间并没有十分充分，每个点的采样为800次，图片清晰度不高，请谅解）代码详见`constant_medium.hpp`
+（由于渲染时间并没有十分充分，每个点的采样为800次，图片清晰度不高）代码详见`constant_medium.hpp`
 
 ### 四、结语
 
