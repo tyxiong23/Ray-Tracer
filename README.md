@@ -53,7 +53,7 @@
 #### 4、参数曲线与曲面(curve.hpp)
 
 在参数曲面求交的过程中，我采用的是和课本第107页相同的G-N迭代法。首先列出方程C(t) - s(u,v) = 0$$。经过一系列求偏导运算，可以得到
-![](http://latex.codecogs.com/svg.latex?\Delta t=\frac{\partial S}{\partial u}\cdot(\frac{\partial S}{\partial v}\times df)/D)
+![](http://latex.codecogs.com/svg.latex?\Deltat=\frac{\partialS}{\partialu}\cdot(\frac{\partialS}{\partialv}\timesdf)/D)
 
 $$
 
