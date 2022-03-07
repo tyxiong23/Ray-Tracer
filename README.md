@@ -13,13 +13,13 @@
 
 渲染效果如下。
 
-![smallpt_car_fine](result/processing/smallpt_car_fine.jpg)
+![smallpt_car_fine](result/processing/FINAL_car.jpg)
 
-![Bezier](result/processing/Bezier.png)
+![Bezier](result/FINAL_Bezier.png)
 
 
 
-![](result/processing/mixed_scene2.png)
+![](result/FINAL_mixed_scene2.png)
 
 注：第一张图展示了景深效果；第二张图的球描绘的是一些动物形象；第三张图正前方的是一个玻璃珠，因为上方灯光较强所以上面显得比较白；在mixed_scene的另一版本中，这个珠子是一个被贴成彩色的漫反射的球（见result）文件夹。
 
@@ -90,14 +90,11 @@ $$
 
 在Material.hpp中添加Isotropic类，代表可以各项同性散射的烟尘介质。此后定义继承Object类的ConstantMedium类，产生形状和内部的Object相同的烟雾。在这一模型中，经过均匀介质散射的概率$$p = C\cdot dL$$，其中dL为这一段内行进的距离。因此可以令$$C = \frac 1 {t_2 - t_1}$$，将概率归一化。在intersect方程中，可以随意设一个表面法向量方向，使得出射光线的方向也是随机的，由此也就得到了烟尘体积效果。
 
-![smoke](C:\Users\x-eri\Desktop\programming\2020_2021\computer_graphics\Final_project\smoke.png)
+![smoke](result/processing/smoke.png)
 
 （由于渲染时间并没有十分充分，每个点的采样为800次，图片清晰度不高，请谅解）代码详见`constant_medium.hpp`
 
-### 四、渲染结果
+### 四、结语
 
-#### 
-### 五、结语
-
-由于个人能力和时间所限，本次作业并未能够实现很多的附加功能，渲染出的图片也很难称得上优美。但通过这次作业，我仍然对本学期的课程所学和图形学的相关知识有了更加深入的认识。在作业的完成过程中，我主要参考了https://raytracing.github.io/上面的内容。最后，感谢老师和助教一学期的辛勤付出！
+通过这次作业，我对课程所学和图形学的相关知识有了更加深入的认识。在作业的完成过程中，我主要参考了 https://raytracing.github.io/ 上面的内容。最后，感谢老师和助教一学期的辛勤付出！
 
