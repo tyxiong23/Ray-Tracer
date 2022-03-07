@@ -53,9 +53,7 @@
 #### 4、参数曲线与曲面(curve.hpp)
 
 在参数曲面求交的过程中，我采用的是和课本第107页相同的G-N迭代法。首先列出方程C(t) - s(u,v) = 0$$。经过一系列求偏导运算，可以得到
-![](http://latex.codecogs.com/svg.latex?\Deltat=\frac{\partialS}{\partialu}\cdot(\frac{\partialS}{\partialv}\timesdf)/D)
-
-$$
+![](http://latex.codecogs.com/svg.latex?\Delta{t}=\frac{\partialS}{\partialu}\cdot(\frac{\partialS}{\partialv}\timesdf)/D)
 
 $$
 \Delta u = \frac {\partial C} {\partial t} \cdot (\frac {\partial S } {\partial v} \times df)/D
@@ -65,8 +63,7 @@ $$
 \Delta v = - \frac {\partial C} {\partial t} \cdot (\frac {\partial S } {\partial u} \times df)/D
 $$
 
-其中![](http://latex.codecogs.com/svg.latex?D=\frac{\partial{C}}{\partial{t}})
-\cdot(\frac{\partial S }{\partial u}\times\frac{\partial S }{\partial v})$$
+其中![](http://latex.codecogs.com/svg.latex?D=\frac{\partial{C}}{\partial{t}}\cdot(\frac{\partial{S}}{\partial{u}}\times\frac{\partial{S}}{\partial{v}})$$
 
 由此可以首先用光线和包围盒求交（如果相交则获取初始的u、v、t），之后进行迭代：若使得相交的点（ray.origin + t * ray.direction) 和曲面上取出来的相交点的距离足够小，则说明光线和旋转曲面相交。这里需要注意，由于Bezier曲线的t的定义域为[0,1]，所以需要对于t的取值进行clamp，来保证其收敛。从实际效果来看，参数曲面的求交过程较为顺利。
 
@@ -86,7 +83,7 @@ $$
 
 #### 6、烟尘效果（体积光？）
 
-在Material.hpp中添加Isotropic类，代表可以各项同性散射的烟尘介质。此后定义继承Object类的ConstantMedium类，产生形状和内部的Object相同的烟雾。在这一模型中，经过均匀介质散射的概率$$p = C\cdot dL$$，其中dL为这一段内行进的距离。因此可以令![](http://latex.codecogs.com/svg.latex?C=\frac{1}{t_2-t_1})，将概率归一化。在intersect方程中，可以随意设一个表面法向量方向，使得出射光线的方向也是随机的，由此也就得到了烟尘体积效果。
+在Material.hpp中添加Isotropic类，代表可以各项同性散射的烟尘介质。此后定义继承Object类的ConstantMedium类，产生形状和内部的Object相同的烟雾。在这一模型中，经过均匀介质散射的概率![](http://latex.codecogs.com/svg.latex?p=C\cdot{dL})，其中dL为这一段内行进的距离。因此可以令![](http://latex.codecogs.com/svg.latex?C=\frac{1}{t_2-t_1})，将概率归一化。在intersect方程中，可以随意设一个表面法向量方向，使得出射光线的方向也是随机的，由此也就得到了烟尘体积效果。
 
 ![smoke](result/processing/smoke.png)
 
