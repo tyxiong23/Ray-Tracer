@@ -55,13 +55,9 @@
 在参数曲面求交的过程中，我采用的是和课本第107页相同的G-N迭代法。首先列出方程![](http://latex.codecogs.com/svg.latex?C(t)-s(u,v)=0)。经过一系列求偏导运算，可以得到
 ![](http://latex.codecogs.com/svg.latex?\Delta{t}=\frac{\partial{S}}{\partial{u}}\cdot(\frac{\partial{S}}{\partial{v}}\times{df})/D)
 
-$$
-\Delta u = \frac {\partial C} {\partial t} \cdot (\frac {\partial S } {\partial v} \times df)/D
-$$
+![](http://latex.codecogs.com/svg.latex?\Delta{u}=\frac{\partial{C}}{\partial{t}}\cdot(\frac{\partial{S}}{\partial{v}}\times{df})/D)
 
-$$
-\Delta v = - \frac {\partial C} {\partial t} \cdot (\frac {\partial S } {\partial u} \times df)/D
-$$
+![](http://latex.codecogs.com/svg.latex?\Delta{v}=-\frac{\partial{C}}{\partial{t}}\cdot(\frac{\partial{S}}{\partial{u}\times{df})/D)
 
 其中![](http://latex.codecogs.com/svg.latex?D=\frac{\partial{C}}{\partial{t}}\cdot(\frac{\partial{S}}{\partial{u}}\times\frac{\partial{S}}{\partial{v}})
 
